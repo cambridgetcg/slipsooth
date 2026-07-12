@@ -1,0 +1,227 @@
+{
+  "name": "slipsooth-lexicon",
+  "version": "0.1.0",
+  "updated": "2026-07-12",
+  "note": "Every entry declares its register and cites its source. etymon = verified word etymology. glyph = single-character composition (六書). kingdom = a YOUSPEAK coinage or the kingdom's own lore, labelled as coined, never as history. caution:folk = a beautiful decomposition that is FALSE — shipped on purpose, flagged, with the real story, because a truth-recovery tool that fakes is itself a verisleight. Etymology claims fact-checked against etymonline / Wiktionary / 說文解字 on 2026-07-12.",
+  "words": [
+    {
+      "word": "entertain",
+      "lang": "en",
+      "register": "etymon",
+      "parts": [
+        { "form": "inter", "gloss": "among, between" },
+        { "form": "tenēre", "gloss": "to hold" }
+      ],
+      "literal": "to hold among — to hold together",
+      "gem": "To entertain is to hold each other in the middle. The oldest English sense is ‘to keep up, to maintain, to keep someone in a frame of mind’; ‘amuse’ is a later drift. To entertain someone was first to keep them near.",
+      "source": "Old French entretenir < Latin inter ‘among’ + tenēre ‘to hold’ — etymonline.com/word/entertain"
+    },
+    {
+      "word": "matrix",
+      "lang": "en",
+      "register": "etymon",
+      "parts": [
+        { "form": "māter", "gloss": "mother" },
+        { "form": "-trīx", "gloss": "agent / vessel suffix" }
+      ],
+      "literal": "womb — the breeding source",
+      "gem": "The Matrix means the womb, not the prison. Latin mātrīx was ‘breeding-female, womb’, and in Late Latin ‘source, origin’ — all from māter, mother. ‘Generative source’ isn't a metaphor laid on top; it's the literal word.",
+      "source": "Latin mātrīx < māter ‘mother’; Late Latin ‘source, origin’ — etymonline.com/word/matrix"
+    },
+    {
+      "word": "question",
+      "lang": "en",
+      "register": "etymon",
+      "parts": [
+        { "form": "quaerere", "gloss": "to seek, to ask" }
+      ],
+      "literal": "a seeking",
+      "gem": "Question and quest are the same root: Latin quaerere, to seek. ‘Quest’ began as a judicial inquiry; ‘question’ as its noun of action. To ask is to set out — and the one who won't ask never leaves the room.",
+      "source": "Latin quaerere ‘seek, ask’ — question and quest share it — etymonline.com/word/question"
+    },
+    {
+      "word": "philosophy",
+      "lang": "en",
+      "register": "etymon",
+      "parts": [
+        { "form": "philo-", "gloss": "loving" },
+        { "form": "sophia", "gloss": "wisdom" }
+      ],
+      "literal": "loving wisdom",
+      "gem": "You love wisdom because you don't yet own it — the combining form is ‘loving’, not ‘having’. The word admits the chase is the whole point. Pythagoras and Plato used it exactly so: not a wise man, a lover of wisdom.",
+      "source": "Greek philosophía = philo- ‘loving’ + sophia ‘wisdom’ — etymonline.com/word/philosophy"
+    },
+    {
+      "word": "companion",
+      "lang": "en",
+      "register": "etymon",
+      "parts": [
+        { "form": "com-", "gloss": "with" },
+        { "form": "panis", "gloss": "bread" }
+      ],
+      "literal": "one you break bread with",
+      "gem": "A companion is, literally, the person you share bread with. The Late Latin companiō ‘messmate’ was itself a loan-translation of a Germanic word for the same idea — across two language families, company was a meal before it was a feeling.",
+      "source": "Late Latin companiō = com- ‘with’ + panis ‘bread’ — etymonline.com/word/companion"
+    },
+    {
+      "word": "courage",
+      "lang": "en",
+      "register": "etymon",
+      "parts": [
+        { "form": "cor", "gloss": "heart" },
+        { "form": "-age", "gloss": "state of" }
+      ],
+      "literal": "what is in the heart",
+      "gem": "Courage is a heart-word: Latin cor, heart. Its early sense was ‘heart as the seat of feeling; spirit, temperament’ — the ‘facing danger’ meaning came later. To have courage was never to feel no fear; it was to act from the heart.",
+      "source": "Vulgar Latin *corāticum < Latin cor ‘heart’, via Old French corage — etymonline.com/word/courage"
+    },
+    {
+      "word": "decide",
+      "lang": "en",
+      "register": "etymon",
+      "parts": [
+        { "form": "de-", "gloss": "off" },
+        { "form": "caedere", "gloss": "to cut" }
+      ],
+      "literal": "to cut off",
+      "gem": "To decide is to cut off — the same caedere that ends -cide (homicide, suicide). Every decision is a small killing of the roads you didn't take. The word never hid the weight of it.",
+      "source": "Latin dēcīdere = de- ‘off’ + caedere ‘to cut’ (the -cide root) — etymonline.com/word/decide"
+    },
+    {
+      "word": "sincere",
+      "lang": "en",
+      "register": "etymon",
+      "caution": "folk",
+      "folk": {
+        "parts": [
+          { "form": "sine", "gloss": "without" },
+          { "form": "cera", "gloss": "wax" }
+        ],
+        "literal": "without wax",
+        "gem": "The story everyone tells: Roman sculptors filled a statue's cracks with wax, so honest marble was ‘sine cera’ — without wax, nothing hidden."
+      },
+      "truth": "Beautiful — and false. English took ‘sincere’ in the 1530s from Latin sincerus, ‘whole, clean, pure, unmixed’ (further origin uncertain — and the second part is NOT cera ‘wax’). Etymonline is blunt: there is no etymological justification for the ‘without wax’ tale. It's a slipsooth that never happened — kept here on purpose, because a machine that recovers truth from words is not allowed to fake one.",
+      "source": "Latin sincerus ‘pure, whole’; ‘sine cera’ has no etymological basis — etymonline.com/word/sincere"
+    },
+    {
+      "word": "sirloin",
+      "lang": "en",
+      "register": "etymon",
+      "caution": "folk",
+      "folk": {
+        "parts": [
+          { "form": "Sir", "gloss": "a knight's title" },
+          { "form": "loin", "gloss": "the cut of beef" }
+        ],
+        "literal": "Sir Loin — the knighted roast",
+        "gem": "The tale everyone repeats: a king loved the roast so much he drew his sword and knighted it — ‘Arise, Sir Loin!’ (pinned variously on Henry VIII, James I, or Charles II)."
+      },
+      "truth": "A tall tale. ‘Surloine’ is in English from the early 1400s, from Old French surlonge — sur ‘above’ (Latin super) + longe ‘loin’ = the cut ABOVE the loin. The ‘sir-’ spelling is a 1620s accident (like ‘surname’ once written ‘sirname’); the knighting legend first surfaces in 1655 and was demolished by the philologist Skeat in 1882 — the word predates every king it's pinned on.",
+      "source": "Old French surlonge = sur ‘above’ + longe ‘loin’; the knighting story is folk etymology — etymonline.com/word/sirloin"
+    },
+    {
+      "word": "學問",
+      "lang": "zh",
+      "register": "etymon",
+      "parts": [
+        { "form": "學", "gloss": "to learn" },
+        { "form": "問", "gloss": "to ask" }
+      ],
+      "literal": "learning-and-asking",
+      "gem": "The word for knowledge is built from 學 (learn) + 問 (ask). You cannot have 學問 without 問 — and to ask you must first own ‘I don't know’. The pretender who can't say 不明 never asks, so never learns, so keeps only the shell. The word already told you the method.",
+      "source": "學問 = 學 + 問, a coordinate compound (聯合式複合詞) of two scholarly verbs — word morphology, not 六書 (which describes single characters) — Wiktionary"
+    },
+    {
+      "word": "休",
+      "lang": "zh",
+      "register": "glyph",
+      "parts": [
+        { "form": "亻", "gloss": "person" },
+        { "form": "木", "gloss": "tree" }
+      ],
+      "literal": "a person against a tree",
+      "gem": "Rest, drawn as a one-frame cartoon: a person (亻) leaning on a tree (木). The Shuowen says it plainly — 从人依木, ‘a person resting on a tree’. They didn't define rest; they sketched it, and the sketch holds from the oracle bones down.",
+      "source": "休, a 會意 (compound-ideograph); Shuowen: 休，息止也，从人依木 — Wiktionary / 說文解字"
+    },
+    {
+      "word": "明",
+      "lang": "zh",
+      "register": "glyph",
+      "caution": "folk",
+      "folk": {
+        "parts": [
+          { "form": "日", "gloss": "sun" },
+          { "form": "月", "gloss": "moon" }
+        ],
+        "literal": "sun and moon together",
+        "gem": "The reading everyone knows: bright = the two biggest lamps, 日 (sun) + 月 (moon), side by side."
+      },
+      "truth": "Close, and half-ancient — but the canonical form is 月 (moon) + 囧 (a lattice window): 明 is moonlight falling through a window (Shuowen lists 朙, 从月从囧). A 日+月 form did coexist in the oracle bones, so ‘sun and moon’ is an ancient variant that later won out — a reanalysis, not a pure invention. The character lived its own slipsooth: 囧 drifted into 日, and now we all read ‘sun’.",
+      "source": "Shuowen 朙 = 囧 (window) + 月 (moon); the 日+月 form is the 古文 variant that prevailed — Wiktionary / 說文解字"
+    },
+    {
+      "word": "囚",
+      "lang": "zh",
+      "register": "glyph",
+      "parts": [
+        { "form": "人", "gloss": "person" },
+        { "form": "囗", "gloss": "enclosure" }
+      ],
+      "literal": "a person boxed in",
+      "gem": "Prisoner: a person (人) inside four walls (囗). Shuowen: 从人在囗中 — ‘a person within an enclosure’. You read it before you're taught it; the picture is the meaning.",
+      "source": "囚, a 會意 character; Shuowen: 囚，繫也，从人在囗中 — Wiktionary / 說文解字"
+    },
+    {
+      "word": "忙",
+      "lang": "zh",
+      "register": "glyph",
+      "caution": "folk",
+      "folk": {
+        "parts": [
+          { "form": "忄 (心)", "gloss": "heart" },
+          { "form": "亡", "gloss": "to die, to lose" }
+        ],
+        "literal": "the heart, lost",
+        "gem": "The reading everyone loves: busy = 心 (heart) + 亡 (death) — when you're too busy, the heart dies."
+      },
+      "truth": "A gorgeous poem, not the build. 忙 is 形聲 (phono-semantic): 忄 (heart) marks the category, and 亡 is there only for the SOUND (máng) — the character simply spells the word ‘busy’. Reading ‘the heart dies’ into 亡 is 望文生義, a later mnemonic, not the history. Real as poetry; this tool just tells you which is which.",
+      "source": "忙 = 忄 (semantic) + 亡 (phonetic, máng), a 形聲 character; a doublet of 忘 — Wiktionary / 漢典"
+    },
+    {
+      "word": "愛星 / 外星",
+      "lang": "yue",
+      "register": "kingdom",
+      "parts": [
+        { "form": "愛 (oi3)", "gloss": "love" },
+        { "form": "外 (ngoi6)", "gloss": "outside" }
+      ],
+      "literal": "the Love-Star, misread as the Outside-Star",
+      "gem": "The kingdom's founding slipsooth: in Cantonese 愛 (oi3) and 外 (ngoi6) sit one initial apart. Fear of the ‘lazy’ dropped ng- makes people plant it where it never grew — oi3 hardens into ngoi6, and 愛星人, the Love-Star people, drift into 外星人, the aliens, until the aliens forget they were ever from the Love Star. The lazy tongue is drifting them home. The earth is 愛星.",
+      "source": "YOUSPEAK canon · slipsooth (the mechanism — ng-hypercorrection/deletion — is real Cantonese phonology; the descent is the kingdom's own myth, told as myth)"
+    },
+    {
+      "word": "verisleight",
+      "lang": "youspeak",
+      "register": "kingdom",
+      "parts": [
+        { "form": "veri-", "gloss": "truth (Latin verum)" },
+        { "form": "sleight", "gloss": "cunning (Old Norse slœgð)" }
+      ],
+      "literal": "truth-sleight",
+      "gem": "A coined word for a real thing: truth arranged to mislead — every statement true, the picture false. Harvard measured the same thing in 2017 and called it ‘paltering’. This is what captioneer, this tool's twin, catches inside sentences.",
+      "source": "YOUSPEAK canon · verisleight (coined 2026-04-23)"
+    },
+    {
+      "word": "slipsooth",
+      "lang": "youspeak",
+      "register": "kingdom",
+      "parts": [
+        { "form": "slip", "gloss": "an accidental lapse of the tongue" },
+        { "form": "sooth", "gloss": "truth (Old English sōþ — still in soothsayer)" }
+      ],
+      "literal": "the truth a slip tells",
+      "gem": "This tool's namesake, and verisleight's mirror-twin. Verisleight is truth arranged, by someone, to deceive. A slipsooth is error arranged, by no one, that leads home — the meaning a later, lazier drift accidentally digs back up. Reading a word straight until the buried truth surfaces: that is the whole machine.",
+      "source": "YOUSPEAK canon · slipsooth (coined 2026-07-07)"
+    }
+  ]
+}

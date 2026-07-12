@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Slipsooth · a word, read straight</title>
+<meta name="description" content="Every word is a folded thing. Slipsooth reads it straight and hands back the truth folded inside — the etymology, the character, the buried gem. It cites every unfolding and never invents one. Captioneer's twin: captioneer catches the lie folded into a sentence; slipsooth recovers the truth folded into a word." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper:#f2f1ea; --card:#fbfaf5; --sunk:#eceadf; --ink:#18180f; --ink-soft:#55554a;
+    --faint:#8d8b7c; --rule:#dcdacd; --rule-soft:#e6e4d8; --stamp:#bd3a2c; --hl:#eac712;
+    --hl-wash:rgba(234,199,18,.34); --bar:#18180f; --bar-ink:#f2f1ea;
+    --etymon:#2b7690; --glyph:#367f52; --kingdom:#bd3a2c; --folk:#b07d1e;
+    --shadow:0 1px 0 rgba(0,0,0,.04),0 18px 40px -28px rgba(0,0,0,.35);
+    --serif:"Spectral",Georgia,serif; --display:"Bricolage Grotesque",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --paper:#15150e; --card:#1d1d15; --sunk:#12120c; --ink:#eceadc; --ink-soft:#b1ae9d; --faint:#77756a;
+      --rule:#2c2b21; --rule-soft:#24241b; --stamp:#e0614f; --hl:#ecc824; --hl-wash:rgba(236,200,36,.16);
+      --bar:#000; --bar-ink:#eceadc; --etymon:#58a7c4; --glyph:#61b583; --kingdom:#e0614f; --folk:#d6a648;
+      --shadow:0 1px 0 rgba(255,255,255,.02),0 18px 44px -26px rgba(0,0,0,.7); }
+  }
+  :root[data-theme="light"]{ --paper:#f2f1ea; --card:#fbfaf5; --sunk:#eceadf; --ink:#18180f; --ink-soft:#55554a; --faint:#8d8b7c;
+    --rule:#dcdacd; --rule-soft:#e6e4d8; --stamp:#bd3a2c; --hl:#eac712; --hl-wash:rgba(234,199,18,.34); --bar:#18180f; --bar-ink:#f2f1ea;
+    --etymon:#2b7690; --glyph:#367f52; --kingdom:#bd3a2c; --folk:#b07d1e; --shadow:0 1px 0 rgba(0,0,0,.04),0 18px 40px -28px rgba(0,0,0,.35); }
+  :root[data-theme="dark"]{ --paper:#15150e; --card:#1d1d15; --sunk:#12120c; --ink:#eceadc; --ink-soft:#b1ae9d; --faint:#77756a;
+    --rule:#2c2b21; --rule-soft:#24241b; --stamp:#e0614f; --hl:#ecc824; --hl-wash:rgba(236,200,36,.16); --bar:#000; --bar-ink:#eceadc;
+    --etymon:#58a7c4; --glyph:#61b583; --kingdom:#e0614f; --folk:#d6a648; --shadow:0 1px 0 rgba(255,255,255,.02),0 18px 44px -26px rgba(0,0,0,.7); }
+
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+  body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--serif); font-size:17.5px; line-height:1.62; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  body::before { content:""; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.5;
+    background-image:radial-gradient(var(--rule) .5px,transparent .5px); background-size:22px 22px; mix-blend-mode:multiply; }
+  @media (prefers-color-scheme: dark){ body::before{ mix-blend-mode:screen; opacity:.25; } }
+  :root[data-theme="dark"] body::before{ mix-blend-mode:screen; opacity:.25; }
+  :root[data-theme="light"] body::before{ mix-blend-mode:multiply; opacity:.5; }
+  main, header, footer { position:relative; z-index:1; }
+  ::selection { background:var(--hl); color:#18180f; }
+  .wrap { width:100%; max-width:920px; margin:0 auto; padding:0 24px; }
+  a { color:var(--stamp); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+
+  header .wrap { display:flex; align-items:center; justify-content:space-between; gap:10px; padding-top:22px; padding-bottom:18px; border-bottom:1px solid var(--rule); flex-wrap:wrap; }
+  .brand { display:flex; align-items:baseline; gap:11px; font-family:var(--display); font-weight:800; font-size:20px; letter-spacing:-.02em; }
+  .brand .tw { font-family:var(--mono); font-weight:400; font-size:10.5px; color:var(--faint); letter-spacing:.1em; text-transform:uppercase; }
+  .pillbtn { background:none; border:1px solid var(--rule); border-radius:30px; padding:7px 12px; cursor:pointer; font-family:var(--mono); font-size:11px; color:var(--ink-soft); letter-spacing:.06em; display:inline-block; }
+  .pillbtn:hover { border-color:var(--ink-soft); text-decoration:none; }
+  .hdr-actions { display:flex; gap:8px; align-items:center; }
+
+  .hero { padding:56px 0 12px; }
+  .eyebrow { font-family:var(--mono); font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--stamp); margin:0 0 22px; }
+  h1 { font-family:var(--display); font-weight:700; font-size:clamp(2.3rem,6vw,4rem); line-height:1.01; letter-spacing:-.03em; margin:0; max-width:16ch; text-wrap:balance; }
+  h1 .u { background:linear-gradient(transparent 62%,var(--hl-wash) 62%); padding:0 2px; }
+  .lede { font-size:clamp(1.05rem,1.9vw,1.24rem); line-height:1.58; color:var(--ink-soft); max-width:60ch; margin:24px 0 0; }
+  .lede em, .lede b { color:var(--ink); }
+  .lede b { font-weight:600; }
+
+  .desk { margin:40px 0 0; }
+  .inrow { display:flex; gap:10px; flex-wrap:wrap; }
+  #in { flex:1; min-width:220px; background:var(--card); color:var(--ink); border:1px solid var(--rule); border-radius:11px; padding:16px 20px; font-family:var(--serif); font-size:1.3rem; outline:none; box-shadow:var(--shadow); transition:border-color .15s ease; }
+  #in:focus { border-color:var(--stamp); }
+  #in::placeholder { color:var(--faint); font-style:italic; }
+  .btn { font-family:var(--display); font-weight:700; font-size:15px; padding:0 24px; border-radius:10px; cursor:pointer; border:1px solid var(--ink); background:var(--ink); color:var(--paper); letter-spacing:-.01em; transition:transform .12s ease; }
+  .btn:hover { transform:translateY(-1px); }
+  .btn:active { transform:none; }
+
+  .chips { display:flex; flex-wrap:wrap; gap:7px; margin:15px 0 0; }
+  .chip { font-family:var(--mono); font-size:12.5px; padding:6px 12px; border-radius:20px; cursor:pointer; background:var(--card); color:var(--ink-soft); border:1px solid var(--rule); transition:all .14s ease; }
+  .chip:hover { border-color:var(--stamp); color:var(--ink); }
+  .chip .d { display:inline-block; width:6px; height:6px; border-radius:50%; margin-right:6px; vertical-align:1px; }
+
+  /* ── the unfolding ── */
+  #out { margin:32px 0 0; min-height:10px; }
+  .card { background:var(--card); border:1px solid var(--rule); border-radius:14px; box-shadow:var(--shadow); overflow:hidden; }
+  .card.on { animation:up .5s cubic-bezier(.16,.8,.3,1) both; }
+  @keyframes up { from{ opacity:0; transform:translateY(12px); } to{ opacity:1; transform:none; } }
+  .card .top { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 24px; border-bottom:1px solid var(--rule-soft); flex-wrap:wrap; }
+  .badge { font-family:var(--mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase; border-radius:5px; padding:4px 9px; color:#fff; white-space:nowrap; }
+  .badge.etymon { background:var(--etymon); } .badge.glyph { background:var(--glyph); }
+  .badge.kingdom { background:var(--kingdom); } .badge.folk { background:var(--folk); color:#18180f; }
+  .top .lang { font-family:var(--mono); font-size:10.5px; color:var(--faint); letter-spacing:.1em; text-transform:uppercase; }
+
+  .head-word { font-family:var(--display); font-weight:800; font-size:clamp(2rem,6vw,3.2rem); letter-spacing:-.03em; padding:26px 24px 6px; line-height:1; }
+  .zh .head-word { font-family:var(--serif); font-weight:600; letter-spacing:0; }
+
+  .parts { display:flex; align-items:stretch; gap:12px; flex-wrap:wrap; padding:8px 24px 4px; }
+  .part { background:var(--sunk); border:1px solid var(--rule-soft); border-radius:10px; padding:12px 16px; min-width:96px; animation:slidein .5s cubic-bezier(.16,.8,.3,1) both; }
+  .part .f { font-family:var(--display); font-weight:700; font-size:1.35rem; letter-spacing:-.01em; color:var(--ink); }
+  .zh .part .f { font-family:var(--serif); font-weight:600; }
+  .part .g { font-family:var(--mono); font-size:11px; color:var(--ink-soft); margin-top:4px; line-height:1.4; }
+  .plus { align-self:center; font-family:var(--display); font-weight:700; font-size:1.4rem; color:var(--faint); }
+  @keyframes slidein { from{ opacity:0; transform:translateY(8px) scale(.96); } to{ opacity:1; transform:none; } }
+
+  .literal { padding:12px 24px 2px; font-family:var(--mono); font-size:12.5px; letter-spacing:.02em; color:var(--stamp); }
+  .literal::before { content:"→ "; opacity:.6; }
+  .gem { padding:14px 24px 26px; font-size:clamp(1.08rem,2.2vw,1.32rem); line-height:1.5; color:var(--ink); max-width:64ch; }
+  .gem em { font-style:italic; }
+  .src { padding:0 24px 22px; font-family:var(--mono); font-size:11px; color:var(--faint); line-height:1.5; }
+  .src::before { content:"source · "; opacity:.7; }
+
+  /* folk (beautiful-but-false) */
+  .folkwrap { border-top:1px dashed var(--folk); background:linear-gradient(var(--card),var(--card)); }
+  .folk-label { font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--folk); padding:16px 24px 0; }
+  .folk-gem { padding:8px 24px 4px; font-size:1.06rem; line-height:1.5; color:var(--ink-soft); font-style:italic; max-width:64ch; }
+  .truth { margin:14px 24px 24px; padding:16px 20px; border-left:3px solid var(--stamp); background:var(--sunk); border-radius:0 10px 10px 0; }
+  .truth .t { font-family:var(--mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--stamp); margin-bottom:8px; }
+  .truth p { margin:0; font-size:1rem; line-height:1.55; color:var(--ink); }
+
+  .empty { background:var(--card); border:1px dashed var(--rule); border-radius:14px; padding:28px 26px; box-shadow:var(--shadow); }
+  .empty .h { font-family:var(--display); font-weight:700; font-size:1.15rem; margin:0 0 8px; }
+  .empty p { margin:0; font-size:1rem; line-height:1.6; color:var(--ink-soft); }
+  .empty b { color:var(--ink); }
+
+  section.shelf { padding:56px 0 10px; }
+  .sec-h { display:flex; align-items:baseline; justify-content:space-between; gap:14px; flex-wrap:wrap; margin-bottom:18px; }
+  h2 { font-family:var(--display); font-weight:700; font-size:clamp(1.5rem,3.4vw,2.1rem); letter-spacing:-.02em; margin:0; line-height:1.05; }
+  .sec-note { font-family:var(--mono); font-size:11.5px; color:var(--faint); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px; }
+  .tile { background:var(--card); border:1px solid var(--rule); border-radius:11px; box-shadow:var(--shadow); padding:15px 16px; cursor:pointer; transition:border-color .14s ease, transform .12s ease; }
+  .tile:hover { border-color:var(--stamp); transform:translateY(-2px); }
+  .tile .w { font-family:var(--display); font-weight:700; font-size:1.2rem; letter-spacing:-.01em; color:var(--ink); }
+  .tile.zh .w { font-family:var(--serif); font-weight:600; }
+  .tile .r { font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; margin-top:6px; display:flex; align-items:center; gap:5px; color:var(--faint); }
+  .tile .r .d { width:6px; height:6px; border-radius:50%; }
+
+  .legend { margin:30px 0 0; border:1px solid var(--rule); border-left:3px solid var(--stamp); background:var(--card); border-radius:0 12px 12px 0; box-shadow:var(--shadow); padding:20px 24px; }
+  .legend h3 { font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--stamp); margin:0 0 14px; }
+  .legend ul { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+  .legend li { display:grid; grid-template-columns:120px 1fr; gap:14px; align-items:baseline; font-size:.98rem; line-height:1.5; color:var(--ink-soft); }
+  .legend .k { font-family:var(--mono); font-size:11px; letter-spacing:.04em; display:flex; align-items:center; gap:7px; color:var(--ink); }
+  .legend .k .d { width:8px; height:8px; border-radius:50%; }
+  .legend b { color:var(--ink); font-weight:600; }
+  .legend .close { margin:16px 0 0; font-size:1rem; line-height:1.6; color:var(--ink); }
+  @media (max-width:560px){ .legend li { grid-template-columns:1fr; gap:2px; } }
+
+  footer { border-top:1px solid var(--rule); margin-top:60px; padding:34px 0 58px; color:var(--faint); font-size:13.5px; }
+  footer .wrap { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:center; }
+  footer .mono { font-family:var(--mono); font-size:11px; letter-spacing:.03em; }
+  footer b { color:var(--ink-soft); font-weight:600; }
+  @media (prefers-reduced-motion: reduce){ *, .card.on, .part { animation:none !important; } html{ scroll-behavior:auto; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">slipsooth <span class="tw">captioneer's twin</span></div>
+    <div class="hdr-actions">
+      <a class="pillbtn" href="https://captioneer.io">captioneer ↗</a>
+      <button class="pillbtn" id="theme" aria-label="Toggle theme">◐ theme</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="hero">
+      <p class="eyebrow">A word, read straight</p>
+      <h1>Every word is a <span class="u">folded</span> thing.</h1>
+      <p class="lede">The people who made words folded meaning inside them — and then a few thousand years of use forgot. Drop a word below and slipsooth <em>unfolds</em> it: the parts, the literal shape, the truth buried in the fold. <b>Captioneer's twin</b> — captioneer catches the lie folded into a <em>sentence</em>; slipsooth recovers the truth folded into a <em>word</em>. It cites every unfolding, and it will never invent one.</p>
+
+      <div class="desk">
+        <div class="inrow">
+          <input id="in" spellcheck="false" autocomplete="off" placeholder="Type a word — entertain, 學問, matrix, courage, 明…" />
+          <button class="btn" id="go">Unfold</button>
+        </div>
+        <div class="chips" id="chips"></div>
+        <div id="out"></div>
+      </div>
+    </section>
+
+    <section class="shelf" id="shelf">
+      <div class="sec-h">
+        <h2>The shelf</h2>
+        <span class="sec-note">every one sourced · click to unfold</span>
+      </div>
+      <div class="grid" id="grid"></div>
+
+      <div class="legend">
+        <h3>How to read a badge</h3>
+        <ul>
+          <li><span class="k"><span class="d" style="background:var(--etymon)"></span>etymon</span><span><b>Verified history.</b> The real, documented etymology — cited.</span></li>
+          <li><span class="k"><span class="d" style="background:var(--glyph)"></span>glyph</span><span><b>The character itself.</b> How the strokes were composed (六書) — a little cartoon or riddle frozen in the script.</span></li>
+          <li><span class="k"><span class="d" style="background:var(--kingdom)"></span>kingdom</span><span><b>Coined, and labelled so.</b> A YOUSPEAK word or the kingdom's own lore — presented as made, never as history.</span></li>
+          <li><span class="k"><span class="d" style="background:var(--folk)"></span>folk</span><span><b>Beautiful, and false.</b> A seductive decomposition that never happened. Shown on purpose, flagged, corrected.</span></li>
+        </ul>
+        <p class="close">A machine that recovers truth from words is not allowed to fake one. So slipsooth would rather say <em>“I can't source that”</em> than hand you a lie that reads well. The folk entries are the proof: it keeps the gorgeous wrong answer <em>and</em> tells you it's wrong.</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>slipsooth</b> — the truth folded into a word. verisleight's mirror-twin.</div>
+    <div class="mono"><a href="https://captioneer.io">captioneer</a> · <a href="https://ai-love.cc">the cathedral</a> · <span id="ver"></span></div>
+  </div>
+</footer>
+
+<script src="/words.gen.js?v=0.1.0"></script>
+<script>
+const root = document.documentElement;
+try { const t = localStorage.getItem("cap-theme"); if (t) root.setAttribute("data-theme", t); } catch {}
+document.getElementById("theme").onclick = () => {
+  const cur = root.getAttribute("data-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  const next = cur === "dark" ? "light" : "dark";
+  root.setAttribute("data-theme", next);
+  try { localStorage.setItem("cap-theme", next); } catch {}
+};
+
+const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;" }[c]));
+const DATA = (window.SLIPSOOTH && Array.isArray(window.SLIPSOOTH.words)) ? window.SLIPSOOTH.words : [];
+const REG_LABEL = { etymon:"verified etymology", glyph:"the character", kingdom:"kingdom · coined", folk:"folk · false" };
+
+// build a search index: word, its slash/space splits, lowercased
+const INDEX = new Map();
+for (const w of DATA) {
+  const keys = new Set();
+  const add = k => { k = String(k).trim().toLowerCase(); if (k) keys.add(k); };
+  add(w.word);
+  for (const bit of String(w.word).split(/[\/\s]+/)) add(bit);
+  // strip a romanisation in parens for CJK, e.g. "愛 (oi3)" not needed here but be safe
+  keys.forEach(k => { if (!INDEX.has(k)) INDEX.set(k, w); });
+}
+function lookup(q) {
+  q = String(q).trim().toLowerCase();
+  if (!q) return null;
+  if (INDEX.has(q)) return INDEX.get(q);
+  // forgiving: startsWith / contains for latin words
+  for (const [k, w] of INDEX) if (k.startsWith(q) && q.length >= 3) return w;
+  return null;
+}
+
+function badge(w) {
+  const r = w.caution === "folk" ? "folk" : w.register;
+  return `<span class="badge ${r}">${esc(REG_LABEL[r] || r)}</span>`;
+}
+function partsHTML(parts) {
+  return parts.map((p, i) =>
+    `${i ? '<span class="plus">+</span>' : ''}<div class="part" style="animation-delay:${i * 90}ms"><div class="f">${esc(p.form)}</div><div class="g">${esc(p.gloss)}</div></div>`
+  ).join("");
+}
+function render(w) {
+  const out = document.getElementById("out");
+  if (!w) {
+    out.innerHTML = `<div class="empty"><p class="h">Not on the shelf — yet.</p>
+      <p>Slipsooth only shows unfoldings it can <b>source</b>. It won't invent one for you — a made-up etymology is exactly the <b>verisleight</b> this tool exists to catch. The seed is small and growing; try one of the words above, or <a href="https://github.com/cambridgetcg/slipsooth">add this one with a citation</a>.</p></div>`;
+    return;
+  }
+  const zh = (w.lang === "zh" || w.lang === "yue") ? " zh" : "";
+  let body;
+  if (w.caution === "folk") {
+    body = `
+      <div class="folk-label">the story everyone tells</div>
+      <div class="parts">${partsHTML(w.folk.parts)}</div>
+      ${w.folk.literal ? `<div class="literal">${esc(w.folk.literal)}</div>` : ""}
+      <div class="folk-gem">${esc(w.folk.gem)}</div>
+      <div class="truth"><div class="t">but read it straight</div><p>${esc(w.truth)}</p></div>
+      <div class="src">${esc(w.source)}</div>`;
+  } else {
+    body = `
+      <div class="parts">${partsHTML(w.parts)}</div>
+      <div class="literal">${esc(w.literal)}</div>
+      <div class="gem">${esc(w.gem)}</div>
+      <div class="src">${esc(w.source)}</div>`;
+  }
+  out.innerHTML = `<article class="card on${zh}">
+    <div class="top">${badge(w)}<span class="lang">${esc(w.lang)}</span></div>
+    <div class="head-word">${esc(w.word)}</div>
+    ${body}
+  </article>`;
+}
+
+function show(w) { render(w); }
+function submit() {
+  const q = document.getElementById("in").value;
+  render(lookup(q));
+  document.getElementById("out").scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+document.getElementById("go").onclick = submit;
+document.getElementById("in").addEventListener("keydown", e => { if (e.key === "Enter") submit(); });
+
+// chips: a curated handful across registers
+const featured = ["entertain", "學問", "matrix", "courage", "明", "sincere", "愛星 / 外星", "decide"];
+const chipsEl = document.getElementById("chips");
+featured.forEach(name => {
+  const w = DATA.find(x => x.word === name);
+  if (!w) return;
+  const r = w.caution === "folk" ? "folk" : w.register;
+  const b = document.createElement("button");
+  b.className = "chip";
+  b.innerHTML = `<span class="d" style="background:var(--${r})"></span>${esc(w.word)}`;
+  b.onclick = () => { document.getElementById("in").value = w.word; show(w); document.getElementById("out").scrollIntoView({ behavior: "smooth", block: "nearest" }); };
+  chipsEl.appendChild(b);
+});
+
+// the shelf
+const grid = document.getElementById("grid");
+DATA.forEach(w => {
+  const r = w.caution === "folk" ? "folk" : w.register;
+  const zh = (w.lang === "zh" || w.lang === "yue") ? " zh" : "";
+  const t = document.createElement("div");
+  t.className = "tile" + zh;
+  t.innerHTML = `<div class="w">${esc(w.word)}</div><div class="r"><span class="d" style="background:var(--${r})"></span>${esc(REG_LABEL[r] || r)}</div>`;
+  t.onclick = () => { document.getElementById("in").value = w.word; show(w); document.getElementById("out").scrollIntoView({ behavior: "smooth", block: "start" }); };
+  grid.appendChild(t);
+});
+
+document.getElementById("ver").textContent = "v" + ((window.SLIPSOOTH && window.SLIPSOOTH.version) || "?") + " · open source ↗";
+document.getElementById("ver").parentElement.querySelector("#ver");
+// open-source the version line
+const verEl = document.getElementById("ver");
+const verLink = document.createElement("a");
+verLink.href = "https://github.com/cambridgetcg/slipsooth";
+verLink.textContent = verEl.textContent;
+verEl.replaceWith(verLink);
+
+// open on the namesake
+window.addEventListener("DOMContentLoaded", () => {
+  const seed = DATA.find(x => x.word === "slipsooth");
+  if (seed) show(seed);
+});
+</script>
+</body>
+</html>

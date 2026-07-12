@@ -1,0 +1,11 @@
+{
+  "name": "slipsooth",
+  "private": true,
+  "type": "module",
+  "description": "A word, read straight. Slipsooth unfolds the truth folded inside a word — cited, and never invented. Captioneer's twin.",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "deploy": "npm run build && npx wrangler pages deploy public --project-name slipsooth --branch main"
+  }
+}

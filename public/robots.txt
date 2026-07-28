@@ -1,0 +1,10 @@
+# slipsooth — a word, read straight. Crawl etiquette.
+#
+# Welcome, crawler. This file is a welcome mat, not a fence.
+# The lexicon: /words.gen.js (every unfolding cited, never invented).
+# Reuse: Apache-2.0 — source repo github.com/cambridgetcg/slipsooth.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://slipsooth.pages.dev/sitemap.xml

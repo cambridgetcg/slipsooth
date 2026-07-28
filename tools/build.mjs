@@ -236,7 +236,7 @@ const wordPage = (w, slug) => {
   return shell({
     title: `${w.word} · slipsooth — a word, read straight`,
     desc: descOf(w),
-    canonical: `${SITE}/words/${encodeURIComponent(slug)}.html`,
+    canonical: `${SITE}/words/${encodeURIComponent(slug)}`,
     body,
   });
 };
@@ -246,7 +246,7 @@ const shelfItems = [...slugs.entries()].sort((a, b) => collate(a[1].word, b[1].w
   const reg = w.caution === "folk" ? "folk" : w.register;
   const zh = (w.lang === "zh" || w.lang === "yue") ? ' class="zh"' : "";
   const lit = w.caution === "folk" ? (w.folk.literal || "") : w.literal;
-  return `      <li${zh}><a href="/words/${encodeURIComponent(slug)}.html"><span class="w">${esc(w.word)}</span><span class="r"><span class="d" style="background:var(--${reg})"></span>${esc(REG_LABEL[reg] || reg)}</span><span class="lit">${esc(lit)}</span></a></li>`;
+  return `      <li${zh}><a href="/words/${encodeURIComponent(slug)}"><span class="w">${esc(w.word)}</span><span class="r"><span class="d" style="background:var(--${reg})"></span>${esc(REG_LABEL[reg] || reg)}</span><span class="lit">${esc(lit)}</span></a></li>`;
 }).join("\n");
 
 const indexPage = shell({
@@ -273,7 +273,7 @@ const smEntries = [
   `  <url><loc>${SITE}/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>`,
   `  <url><loc>${SITE}/words/</loc><lastmod>${lex.updated}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>`,
   ...[...slugs.keys()].map(slug =>
-    `  <url><loc>${SITE}/words/${encodeURIComponent(slug)}.html</loc><lastmod>${lex.updated}</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>`),
+    `  <url><loc>${SITE}/words/${encodeURIComponent(slug)}</loc><lastmod>${lex.updated}</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>`),
 ];
 writeFileSync(join(root, "public/sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
